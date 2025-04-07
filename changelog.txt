@@ -1,0 +1,10 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.3.0
+Date: 2025-04-03
+    Changes:
+        - Adjusted the prerequisite mods, requiring the Placeables mod.
+---------------------------------------------------------------------------------------------------
+Version: 0.2.0
+Date: 2025-04-02
+    Changes:
+        - Adjusted the prerequisite mods, changed pyhardmode to an optional mod.
