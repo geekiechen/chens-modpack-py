@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.4.0
+Date: 2025-04-07
+    Changes:
+        - Adjusted the prerequisite mods, requiring the py-another-early-train mod.
+---------------------------------------------------------------------------------------------------
 Version: 0.3.0
 Date: 2025-04-03
     Changes:
@@ -8,3 +13,5 @@ Version: 0.2.0
 Date: 2025-04-02
     Changes:
         - Adjusted the prerequisite mods, changed pyhardmode to an optional mod.
+
+
