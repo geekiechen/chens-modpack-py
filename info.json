@@ -1,6 +1,6 @@
 {
     "name": "chens-modpack-py",
-    "version": "0.4.0",
+    "version": "0.5.0",
     "title": "Chens Modpack(py)",
     "author": "JackieChen",
     "dependencies": [
@@ -19,9 +19,9 @@
         "nco-LongStorageTanks",
         "not-enough-parameters",
         "Placeables",
-        "py-another-early-train",
+        "? py-another-early-train",
         "pymodpack",
-        "pysimple",
+        "? pysimple",
         "router",
         "stdlib2",
         "underground-pipe-pack",

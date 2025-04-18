@@ -1,17 +1,22 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.5.0
+Date: 2025-04-19
+  Changes:
+    - Adjusted the prerequisite mods.
+---------------------------------------------------------------------------------------------------
 Version: 0.4.0
 Date: 2025-04-07
-    Changes:
-        - Adjusted the prerequisite mods, requiring the py-another-early-train mod.
+  Changes:
+    - Adjusted the prerequisite mods, requiring the py-another-early-train mod.
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.0
 Date: 2025-04-03
-    Changes:
-        - Adjusted the prerequisite mods, requiring the Placeables mod.
+  Changes:
+    - Adjusted the prerequisite mods, requiring the Placeables mod.
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.0
 Date: 2025-04-02
-    Changes:
-        - Adjusted the prerequisite mods, changed pyhardmode to an optional mod.
+  Changes:
+    - Adjusted the prerequisite mods, changed pyhardmode to an optional mod.
 
 
