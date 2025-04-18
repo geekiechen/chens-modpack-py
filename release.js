@@ -2,7 +2,8 @@ const inquirer = require("inquirer");
 const { execSync } = require("child_process");
 
 (async () => {
-    const { type } = await inquirer.createPromptModule([
+    const prompt = inquirer.createPromptModule(); // 初始化 prompt
+    const { type } = await prompt([  // 使用 prompt 变量
         {
             type: "list",
             name: "type",
