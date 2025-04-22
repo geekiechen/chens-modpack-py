@@ -1,9 +1,19 @@
 const inquirer = require("inquirer");
-const { execSync } = require("child_process");
+const { execSync, spawnSync } = require("child_process");
+const fs = require("fs");
+
+function extractLatestChangelogBlock(filePath) {
+    const content = fs.readFileSync(filePath, "utf-8");
+    const match = content.match(/^[-]{5,}\r?\n([\s\S]*?)(?=\r?\n[-]{5,})/m);
+    if (!match) {
+        throw new Error("❌ 无法在 changelog.txt 中提取版本记录");
+    }
+    return match[1].trim();
+}
 
 (async () => {
-    const prompt = inquirer.createPromptModule(); // 初始化 prompt
-    const { type } = await prompt([  // 使用 prompt 变量
+    const prompt = inquirer.createPromptModule();
+    const { type } = await prompt([
         {
             type: "list",
             name: "type",
@@ -20,21 +30,53 @@ const { execSync } = require("child_process");
     ]);
 
     try {
-        execSync(`git add . && git commit -m "chore: release prep"`, {
+        // 提取 changelog.txt 中最新块
+        const block = extractLatestChangelogBlock("changelog.txt");
+
+        // 提取版本和日期
+        const [versionLine, dateLine] = block.split("\n");
+        const versionMatch = versionLine.match(/Version:\s*(.+)/);
+        const dateMatch = dateLine.match(/Date:\s*(.+)/);
+        if (!versionMatch || !dateMatch) throw new Error("无法解析版本或日期");
+
+        const v = versionMatch[1].trim();
+        const date = dateMatch[1].trim();
+
+        const formattedChangelog = `Version:${v}\nDate:${date}\nChanges:\n-${block
+            .split("\n")
+            .slice(2)
+            .join("\n-")}`;
+
+        // Git 操作
+        execSync(`git add .`, { stdio: "inherit" });
+
+        execSync(`npx standard-version --release-as ${type} --skip.changelog`, {
             stdio: "inherit",
         });
 
-        execSync(`npx standard-version --release-as ${type}`, {
-            stdio: "inherit",
-        });
+        execSync(`git push origin main --follow-tags`, { stdio: "inherit" });
 
-        execSync(`git push origin main --follow-tags`, {
-            stdio: "inherit",
-        });
+        // 创建 GitHub Release
+        const result = spawnSync(
+            "gh",
+            [
+                "release",
+                "create",
+                `${v}`,
+                "--title",
+                `Version：${v}`,
+                "--notes",
+                `${formattedChangelog}`,
+            ],
+            {
+                stdio: ["pipe", "inherit", "inherit"],
+                encoding: "utf-8",
+            }
+        );
 
-        execSync(`npx github-release-from-changelog`, {
-            stdio: "inherit",
-        });
+        if (result.status !== 0) {
+            throw new Error("gh release create 命令执行失败");
+        }
     } catch (e) {
         console.error("❌ 发布过程中出错：", e.message);
     }
