@@ -42,7 +42,7 @@ function extractLatestChangelogBlock(filePath) {
         const v = versionMatch[1].trim();
         const date = dateMatch[1].trim();
 
-        const formattedChangelog = `Date: ${date}\nChanges:\n${block
+        const formattedChangelog = `Date: ${date}\n${block
             .split("\n")
             .slice(2)
             .join("\n")}`;
