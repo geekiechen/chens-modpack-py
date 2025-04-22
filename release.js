@@ -42,10 +42,10 @@ function extractLatestChangelogBlock(filePath) {
         const v = versionMatch[1].trim();
         const date = dateMatch[1].trim();
 
-        const formattedChangelog = `Date: ${date}\nChanges:\n- ${block
+        const formattedChangelog = `Date: ${date}\nChanges:\n${block
             .split("\n")
             .slice(2)
-            .join("\n- ")}`;
+            .join("\n")}`;
 
         // Git 操作
         execSync(`git add .`, { stdio: "inherit" });
@@ -53,6 +53,9 @@ function extractLatestChangelogBlock(filePath) {
         execSync(`npx standard-version --release-as ${type} --skip.changelog`, {
             stdio: "inherit",
         });
+
+        const packageJson = require("./package.json");
+        console.log(`当前版本：${packageJson.version}`);
 
         execSync(`git push origin main --follow-tags`, { stdio: "inherit" });
 
