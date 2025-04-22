@@ -1,7 +1,0 @@
-node_modules/
-package.json
-package-lock.json
-.gitattributes
-.gitignore
-CHANGELOG.md
-full-release.cmd
