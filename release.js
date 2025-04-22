@@ -42,10 +42,10 @@ function extractLatestChangelogBlock(filePath) {
         const v = versionMatch[1].trim();
         const date = dateMatch[1].trim();
 
-        const formattedChangelog = `Version:${v}\nDate:${date}\nChanges:\n-${block
+        const formattedChangelog = `Date: ${date}\nChanges:\n- ${block
             .split("\n")
             .slice(2)
-            .join("\n-")}`;
+            .join("\n- ")}`;
 
         // Git 操作
         execSync(`git add .`, { stdio: "inherit" });
