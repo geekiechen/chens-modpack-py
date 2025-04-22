@@ -1,6 +1,6 @@
 {
     "name": "chens-modpack-py",
-    "version": null,
+    "version": "0.5.1",
     "scripts": {
         "release": "standard-version",
         "full-release": "node release.js"
