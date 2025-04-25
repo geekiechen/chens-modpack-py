@@ -1,8 +1,8 @@
 {
     "name": "chens-modpack-py",
-    "version": "0.6.0",
-    "title": "Chens Modpack(py)",
-    "author": "JackieChen",
+    "version": "0.6.1",
+    "title": "Chens Modpack(pyanodon)",
+    "author": "GeekieChen",
     "dependencies": [
         "aai-loaders",
         "aai-loaders-sane",
@@ -28,9 +28,11 @@
         "? enable-all-feature-flags",
         "? NOverhang",
         "? PowerOverload",
+        "? pycranes",
+        "? pycranes-spdfix",
         "? pyhardmode"
     ],
-    "description": "这个是我做的py模组整合包。",
+    "description": "这个是我做的pyanodon模组整合包。",
     "factorio_version": "2.0",
     "license": "MIT"
 }

@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.6.1
+Date: 2025-04-25
+  Changes:
+    - Added optional prerequisite mod: pycranes.
+    - Added optional prerequisite mod: pycranes-spdfix.
+---------------------------------------------------------------------------------------------------
 Version: 0.6.0
 Date: 2025-04-22
   Changes:
