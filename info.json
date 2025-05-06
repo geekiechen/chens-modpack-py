@@ -1,7 +1,7 @@
 {
     "name": "chens-modpack-py",
-    "version": "0.6.1",
-    "title": "Chens Modpack(pyanodon)",
+    "version": "0.7.0",
+    "title": "Chens Modpack (Pyanodon)",
     "author": "GeekieChen",
     "dependencies": [
         "aai-loaders",
@@ -25,6 +25,7 @@
         "underground-pipe-pack",
         "underground-pipe-pack_for_py",
 
+        "? AsphaltRoadsPatched",
         "? enable-all-feature-flags",
         "? NOverhang",
         "? PowerOverload",
@@ -32,7 +33,7 @@
         "? pycranes-spdfix",
         "? pyhardmode"
     ],
-    "description": "这个是我做的pyanodon模组整合包。",
+    "description": "这个是我做的 Pyanodon 模组整合包。",
     "factorio_version": "2.0",
     "license": "MIT"
 }
