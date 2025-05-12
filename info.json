@@ -1,6 +1,6 @@
 {
     "name": "chens-modpack-py",
-    "version": "0.7.0",
+    "version": "0.8.0",
     "title": "Chens Modpack (Pyanodon)",
     "author": "GeekieChen",
     "dependencies": [
@@ -10,10 +10,8 @@
         "configurable-valves",
         "cybersyn-combinator",
         "earlier-teleporters_redux",
-        "FoMaKs-Pyanodons-Tweaks",
         "InserterCranes-for-pymods",
         "Lighted-Poles-Plus-pyalternativeenergy",
-        "md-py-tweaks",
         "Milestones",
         "Nanobots2",
         "nco-LongStorageTanks",
